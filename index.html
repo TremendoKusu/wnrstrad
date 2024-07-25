@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wnrs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@700&display=swap');
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .centered-rectangle {
+            background-color: white;
+            border-radius: 20px;
+            width: 600px;
+            height: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                        0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+            transition: background-color 0.3s, color 0.3s; /* Transición para suavizar el cambio de apariencia */
+        }
+
+        .alternate-centered-rectangle {
+            background-color: #C10016;
+            color: white;
+        }
+
+        .text-box {
+            width: calc(100% - 70px); /* Hacer que las cajas de texto ocupen el 100% del ancho del rectángulo menos 70px para los márgenes */
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0 35px; /* Margen de 35px a derecha e izquierda */
+            box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+        }
+
+        .text-box.large {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #C10016; /* Color de texto por defecto */
+        }
+
+        .text-box.small {
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #C10016; /* Color de texto por defecto */
+        }
+
+        .level-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .level-rectangle {
+            background-color: #C10016;
+            border-radius: 10px;
+            width: 200px;
+            height: 80px;
+            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
+                        0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .level-text {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .next-card-rectangle {
+            background-color: #C10016;
+            border-radius: 10px;
+            width: 200px;
+            height: 50px;
+            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
+                        0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 70px; /* Añadido espacio para los nuevos botones */
+        }
+
+        .next-card-text {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation-rectangle {
+            border-radius: 10px;
+            width: 150px; /* Reducido un 25% */
+            height: 60px; /* Reducido un 25% */
+            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
+                        0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .navigation-rectangle.white {
+            background-color: white;
+        }
+
+        .navigation-rectangle.black {
+            background-color: black;
+        }
+
+        .navigation-rectangle.red {
+            background-color: #C10016;
+        }
+
+        .navigation-text {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .navigation-text.red {
+            color: #C10016;
+        }
+
+        .navigation-text.white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="level-container">
+        <div class="level-rectangle level1-button">
+            <div class="level-text">Level 1</div>
+            <div class="level-text">Perception</div>
+        </div>
+        <div class="level-rectangle level2-button">
+            <div class="level-text">Level 2</div>
+            <div class="level-text">Connection</div>
+        </div>
+        <div class="level-rectangle level3-button">
+            <div class="level-text">Level 3</div>
+            <div class="level-text">Reflection</div>
+        </div>
+    </div>
+
+    <div class="centered-rectangle" id="question-box">
+        <div class="text-box large" id="question-text">
+            Choose a level and press "Next card" to start
+        </div>
+        <div class="text-box small" id="small-text">
+            We are not really strangers online
+        </div>
+    </div>
+
+    <div class="next-card-rectangle">
+        <div class="next-card-text">Next card</div>
+    </div>
+
+    <div class="navigation-container">
+        <div class="navigation-rectangle white" onclick="window.location.href='index.html'">
+            <div class="navigation-text red">WNRS</div>
+        </div>
+        <div class="navigation-rectangle black" onclick="window.location.href='index-alternative.html'">
+            <div class="navigation-text red">XXX</div>
+        </div>
+        <div class="navigation-rectangle red" onclick="window.location.href='index-alternative2.html'">
+            <div class="navigation-text white">MIX</div>
+        </div>
+    </div>
+
+    <script>
+        let questionsLevel1 = [];
+        let questionsLevel2 = [];
+        let questionsLevel3 = [];
+        let currentQuestions = [];
+        let displayedQuestions = new Set();
+
+        function loadQuestions() {
+            fetch('level1.json')
+                .then(response => response.json())
+                .then(data => questionsLevel1 = data);
+
+            fetch('level2.json')
+                .then(response => response.json())
+                .then(data => questionsLevel2 = data);
+
+            fetch('level3.json')
+                .then(response => response.json())
+                .then(data => questionsLevel3 = data);
+        }
+
+        window.onload = loadQuestions;
+
+        document.querySelector('.level1-button').addEventListener('click', () => {
+            currentQuestions = questionsLevel1.slice();
+            displayedQuestions.clear();
+        });
+
+        document.querySelector('.level2-button').addEventListener('click', () => {
+            currentQuestions = questionsLevel2.slice();
+            displayedQuestions.clear();
+        });
+
+        document.querySelector('.level3-button').addEventListener('click', () => {
+            currentQuestions = questionsLevel3.slice();
+            displayedQuestions.clear();
+        });
+
+        document.querySelector('.next-card-rectangle').addEventListener('click', () => {
+            if (currentQuestions.length > 0) {
+                let availableQuestions = currentQuestions.filter(q => !displayedQuestions.has(q));
+                if (availableQuestions.length === 0) {
+                    alert('No more new questions available at this level!');
+                    return;
+                }
+
+                const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+                const question = availableQuestions[randomIndex];
+                const questionBox = document.getElementById('question-box');
+                const questionText = document.getElementById('question-text');
+                const smallText = document.getElementById('small-text'); // Selecciona el texto pequeño
+
+                displayedQuestions.add(question); // Añade la pregunta al conjunto de preguntas mostradas
+
+                if (question.startsWith("WILDCARD")) {
+                    questionBox.classList.add('alternate-centered-rectangle');
+                    questionText.style.color = "white"; // Cambia el color del texto principal a blanco
+                    smallText.style.color = "white"; // Cambia el color del texto pequeño a blanco
+
+                    const wildcardText = question.split("WILDCARD")[1].trim();
+                    questionText.innerHTML = `WILDCARD<br>${wildcardText}`; // Divide "WILDCARD" en una línea diferente
+                } else {
+                    questionBox.classList.remove('alternate-centered-rectangle'); // Elimina la clase de apariencia alternativa si no hay "WILDCARD"
+                    questionText.style.color = "#C10016"; // Restaura el color del texto principal a rojo
+                    smallText.style.color = "#C10016"; // Restaura el color del texto pequeño a rojo
+                    questionText.innerText = question; // Actualiza el texto de la pregunta
+                }
+            } else {
+                alert('Please select a level first!');
+            }
+        });
+    </script>
+</body>
+</html>
