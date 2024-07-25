@@ -250,15 +250,15 @@
         let displayedQuestions = new Set();
 
         function loadQuestions() {
-            fetch('level1.json')
+            fetch('level1-wnrs-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel1 = data);
 
-            fetch('level2.json')
+            fetch('level2-wnrs-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel2 = data);
 
-            fetch('level3.json')
+            fetch('level3-wnrs-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel3 = data);
         }
