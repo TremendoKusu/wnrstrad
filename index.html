@@ -163,9 +163,45 @@
         .navigation-text.white {
             color: white;
         }
+
+        .language-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .language-rectangle {
+            background-color: white;
+            border-radius: 10px;
+            width: 100px;
+            height: 50px;
+            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
+                        0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .language-text {
+            color: #C10016;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
+    <div class="language-container">
+        <div class="language-rectangle" onclick="window.location.href='index-es.html'">
+            <div class="language-text">ES</div>
+        </div>
+        <div class="language-rectangle" onclick="window.location.href='index-en.html'">
+            <div class="language-text">ENG</div>
+        </div>
+    </div>
+
     <div class="level-container">
         <div class="level-rectangle level1-button">
             <div class="level-text">Level 1</div>
