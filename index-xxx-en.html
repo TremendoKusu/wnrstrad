@@ -247,15 +247,15 @@
         let displayedQuestions = new Set();
 
         function loadQuestions() {
-            fetch('level1-alternative.json')
+            fetch('level1-xxx-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel1 = data);
 
-            fetch('level2-alternative.json')
+            fetch('level2-xxx-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel2 = data);
 
-            fetch('level3-alternative.json')
+            fetch('level3-xxx-en.json')
                 .then(response => response.json())
                 .then(data => questionsLevel3 = data);
         }
