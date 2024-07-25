@@ -257,9 +257,23 @@
                     fetch('level3-wnrs-en.json')
                 ]);
 
+                if (!level1Response.ok) {
+                    throw new Error(`Failed to load level 1 questions: ${level1Response.statusText}`);
+                }
+                if (!level2Response.ok) {
+                    throw new Error(`Failed to load level 2 questions: ${level2Response.statusText}`);
+                }
+                if (!level3Response.ok) {
+                    throw new Error(`Failed to load level 3 questions: ${level3Response.statusText}`);
+                }
+
                 questionsLevel1 = await level1Response.json();
                 questionsLevel2 = await level2Response.json();
                 questionsLevel3 = await level3Response.json();
+
+                console.log('Level 1 questions loaded:', questionsLevel1);
+                console.log('Level 2 questions loaded:', questionsLevel2);
+                console.log('Level 3 questions loaded:', questionsLevel3);
             } catch (error) {
                 console.error('Error loading questions:', error);
             }
