@@ -249,18 +249,20 @@
         let currentQuestions = [];
         let displayedQuestions = new Set();
 
-        function loadQuestions() {
-            fetch('level1-wnrs-en.json')
-                .then(response => response.json())
-                .then(data => questionsLevel1 = data);
+        async function loadQuestions() {
+            try {
+                const [level1Response, level2Response, level3Response] = await Promise.all([
+                    fetch('level1-wnrs-en.json'),
+                    fetch('level2-wnrs-en.json'),
+                    fetch('level3-wnrs-en.json')
+                ]);
 
-            fetch('level2-wnrs-en.json')
-                .then(response => response.json())
-                .then(data => questionsLevel2 = data);
-
-            fetch('level3-wnrs-en.json')
-                .then(response => response.json())
-                .then(data => questionsLevel3 = data);
+                questionsLevel1 = await level1Response.json();
+                questionsLevel2 = await level2Response.json();
+                questionsLevel3 = await level3Response.json();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+            }
         }
 
         window.onload = loadQuestions;
