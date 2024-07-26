@@ -22,7 +22,8 @@
         .centered-rectangle {
             background-color: white;
             border-radius: 20px;
-            width: 600px;
+            width: 90%;
+            max-width: 600px;
             height: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
                         0 6px 20px rgba(0, 0, 0, 0.1);
@@ -74,6 +75,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .level-rectangle {
@@ -87,7 +89,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0 5px;
+            margin: 10px;
             cursor: pointer;
         }
 
@@ -122,6 +124,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .navigation-rectangle {
@@ -134,7 +137,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0 10px;
+            margin: 10px;
             cursor: pointer;
         }
 
@@ -169,6 +172,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .language-rectangle {
@@ -181,7 +185,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 5px;
+            margin: 10px;
             cursor: pointer;
         }
 
@@ -189,6 +193,48 @@
             color: #C10016;
             font-weight: bold;
             text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .centered-rectangle {
+                width: 90%;
+                height: auto;
+                padding: 20px;
+            }
+
+            .text-box.large {
+                font-size: 16px;
+            }
+
+            .text-box.small {
+                font-size: 12px;
+            }
+
+            .level-rectangle, .next-card-rectangle, .navigation-rectangle, .language-rectangle {
+                width: 90%;
+                max-width: 200px;
+                height: auto;
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            .level-text, .next-card-text, .navigation-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-box.large {
+                font-size: 14px;
+            }
+
+            .text-box.small {
+                font-size: 10px;
+            }
+
+            .level-text, .next-card-text, .navigation-text {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
