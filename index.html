@@ -36,7 +36,7 @@
             text-align: center;
             position: relative;
             margin-bottom: 20px;
-            transition: background-color 0.3s, color 0.3s; /* Transición para suavizar el cambio de apariencia */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .alternate-centered-rectangle {
@@ -45,11 +45,11 @@
         }
 
         .text-box {
-            width: calc(100% - 70px); /* Hacer que las cajas de texto ocupen el 100% del ancho del rectángulo menos 70px para los márgenes */
+            width: calc(100% - 70px);
             font-weight: bold;
             text-transform: uppercase;
-            padding: 0 35px; /* Margen de 35px a derecha e izquierda */
-            box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+            padding: 0 35px;
+            box-sizing: border-box;
         }
 
         .text-box.large {
@@ -58,7 +58,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #C10016; /* Color de texto por defecto */
+            color: #C10016;
         }
 
         .text-box.small {
@@ -67,37 +67,39 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            color: #C10016; /* Color de texto por defecto */
+            color: #C10016;
         }
 
-        .level-container {
+        .level-container, .navigation-container, .language-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
-        .level-rectangle {
-            background-color: #C10016;
+        .level-rectangle, .navigation-rectangle, .language-rectangle {
             border-radius: 10px;
             width: 200px;
             height: 80px;
             box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
                         0 6px 20px rgba(0, 0, 0, 0.1);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 10px;
             cursor: pointer;
         }
 
-        .level-text {
-            color: white;
+        .level-text, .navigation-text, .language-text, .next-card-text {
             font-weight: bold;
             text-transform: uppercase;
-            margin-top: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        .level-rectangle {
+            background-color: #C10016;
         }
 
         .next-card-rectangle {
@@ -111,34 +113,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            margin-bottom: 70px; /* Añadido espacio para los nuevos botones */
-        }
-
-        .next-card-text {
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .navigation-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .navigation-rectangle {
-            border-radius: 10px;
-            width: 150px; /* Reducido un 25% */
-            height: 60px; /* Reducido un 25% */
-            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
-                        0 6px 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            cursor: pointer;
+            margin-bottom: 70px;
         }
 
         .navigation-rectangle.white {
@@ -153,46 +128,8 @@
             background-color: #C10016;
         }
 
-        .navigation-text {
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
         .navigation-text.red {
             color: #C10016;
-        }
-
-        .navigation-text.white {
-            color: white;
-        }
-
-        .language-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .language-rectangle {
-            background-color: white;
-            border-radius: 10px;
-            width: 100px;
-            height: 50px;
-            box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
-                        0 6px 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .language-text {
-            color: #C10016;
-            font-weight: bold;
-            text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
@@ -354,22 +291,22 @@
                 const question = availableQuestions[randomIndex];
                 const questionBox = document.getElementById('question-box');
                 const questionText = document.getElementById('question-text');
-                const smallText = document.getElementById('small-text'); // Selecciona el texto pequeño
+                const smallText = document.getElementById('small-text');
 
-                displayedQuestions.add(question); // Añade la pregunta al conjunto de preguntas mostradas
+                displayedQuestions.add(question);
 
                 if (question.startsWith("WILDCARD")) {
                     questionBox.classList.add('alternate-centered-rectangle');
-                    questionText.style.color = "white"; // Cambia el color del texto principal a blanco
-                    smallText.style.color = "white"; // Cambia el color del texto pequeño a blanco
+                    questionText.style.color = "white";
+                    smallText.style.color = "white";
 
                     const wildcardText = question.split("WILDCARD")[1].trim();
-                    questionText.innerHTML = `WILDCARD<br>${wildcardText}`; // Divide "WILDCARD" en una línea diferente
+                    questionText.innerHTML = `WILDCARD<br>${wildcardText}`;
                 } else {
-                    questionBox.classList.remove('alternate-centered-rectangle'); // Elimina la clase de apariencia alternativa si no hay "WILDCARD"
-                    questionText.style.color = "#C10016"; // Restaura el color del texto principal a rojo
-                    smallText.style.color = "#C10016"; // Restaura el color del texto pequeño a rojo
-                    questionText.innerText = question; // Actualiza el texto de la pregunta
+                    questionBox.classList.remove('alternate-centered-rectangle');
+                    questionText.style.color = "#C10016";
+                    smallText.style.color = "#C10016";
+                    questionText.innerText = question;
                 }
             } else {
                 alert('Please select a level first!');
