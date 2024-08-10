@@ -190,6 +190,29 @@
             font-weight: bold;
             text-transform: uppercase;
         }
+
+        /* Estilo para las nuevas líneas de texto */
+        .footer-text {
+            font-size: 10px;
+            font-family: 'Helvetica', sans-serif;
+            color: black;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .footer-text a {
+            color: #C10016;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Aumenta el espacio entre las líneas de texto y los botones inferiores */
+        .footer-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -236,6 +259,18 @@
         </div>
         <div class="navigation-rectangle red" onclick="window.location.href='index-alternative2.html'">
             <div class="navigation-text white">MIX</div>
+        </div>
+
+    <!-- Nuevas líneas de texto al final de la página con mayor espacio superior -->
+    <div class="footer-container">
+        <div class="footer-text">
+            <a href="#">Readme</a>
+        </div>
+        <div class="footer-text">
+            Based on the version made by <a href="https://github.com/munjoonteo" target="_blank">@munjoonteo</a> and <a href="https://github.com/ilyues" target="_blank">@ilyues</a>
+        </div>
+        <div class="footer-text">
+            You can visit the original game website <a href="https://www.werenotreallystrangers.com/" target="_blank">HERE</a>
         </div>
     </div>
 
