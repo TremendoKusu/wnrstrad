@@ -35,7 +35,7 @@
             text-align: center;
             position: relative;
             margin-bottom: 20px;
-            transition: background-color 0.3s, color 0.3s; /* Transición para suavizar el cambio de apariencia */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .alternate-centered-rectangle {
@@ -44,11 +44,11 @@
         }
 
         .text-box {
-            width: calc(100% - 70px); /* Hacer que las cajas de texto ocupen el 100% del ancho del rectángulo menos 70px para los márgenes */
+            width: calc(100% - 70px);
             font-weight: bold;
             text-transform: uppercase;
-            padding: 0 35px; /* Margen de 35px a derecha e izquierda */
-            box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+            padding: 0 35px;
+            box-sizing: border-box;
         }
 
         .text-box.large {
@@ -57,7 +57,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #C10016; /* Color de texto por defecto */
+            color: #C10016;
         }
 
         .text-box.small {
@@ -66,7 +66,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            color: #C10016; /* Color de texto por defecto */
+            color: #C10016;
         }
 
         .level-container {
@@ -110,7 +110,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            margin-bottom: 70px; /* Añadido espacio para los nuevos botones */
+            margin-bottom: 70px;
         }
 
         .next-card-text {
@@ -128,8 +128,8 @@
 
         .navigation-rectangle {
             border-radius: 10px;
-            width: 150px; /* Reducido un 25% */
-            height: 60px; /* Reducido un 25% */
+            width: 150px;
+            height: 60px;
             box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
                         0 6px 20px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -180,7 +180,7 @@
             width: 100px;
             height: 50px;
             box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1), 
-                        0 6px 20px rgba(0, 0, 0, 0.1);
+                        0 6px 20px rgba(0, 0, 0, 1.1);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -210,6 +210,11 @@
 
         .footer-text a:hover {
             text-decoration: underline;
+        }
+
+        /* Aumenta el espacio entre las líneas de texto y los botones inferiores */
+        .footer-container {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -263,15 +268,17 @@
         </div>
     </div>
 
-    <!-- Nuevas líneas de texto al final de la página -->
-    <div class="footer-text">
-        <a href="#">Readme</a>
-    </div>
-    <div class="footer-text">
-        Based on the version made by <a href="https://github.com/munjoonteo" target="_blank">@munjoonteo</a> and <a href="https://github.com/ilyues" target="_blank">@ilyues</a>
-    </div>
-    <div class="footer-text">
-        You can visit the original game website <a href="https://www.werenotreallystrangers.com/" target="_blank">HERE</a>
+    <!-- Nuevas líneas de texto al final de la página con mayor espacio superior -->
+    <div class="footer-container">
+        <div class="footer-text">
+            <a href="#">Readme</a>
+        </div>
+        <div class="footer-text">
+            Based on the version made by <a href="https://github.com/munjoonteo" target="_blank">@munjoonteo</a> and <a href="https://github.com/ilyues" target="_blank">@ilyues</a>
+        </div>
+        <div class="footer-text">
+            You can visit the original game website <a href="https://www.werenotreallystrangers.com/" target="_blank">HERE</a>
+        </div>
     </div>
 
     <script>
