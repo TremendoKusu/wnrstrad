@@ -1,5 +1,5 @@
 /ENG/<br>
-After purchasing the original game and using the online version from <a href="https://github.com/munjoonteo" target="_blank">@munjoonteo</a> and <a href="https://github.com/ilyues" target="_blank">@ilyues</a> [<a href="(https://munjoonteo.github.io/wnrs/)" target="_blank">TRY IT HERE</a>], I decided to contribute my own online version. It includes some modifications with respect to the original game, the result of the different times I have played it.<br>
+After purchasing the original game and using the online version from <a href="https://github.com/munjoonteo" target="_blank">@munjoonteo</a> and <a href="https://github.com/ilyues" target="_blank">@ilyues</a> <a href="(https://munjoonteo.github.io/wnrs/)" target="_blank">[TRY IT HERE]</a>, I decided to contribute my own online version. It includes some modifications with respect to the original game, the result of the different times I have played it.<br>
 Most of the code is done with ChatGPT without any type of profit.<br>
 If you like the game, I highly recommend purchasing the physical version on the official WNRS website.<br>
 
